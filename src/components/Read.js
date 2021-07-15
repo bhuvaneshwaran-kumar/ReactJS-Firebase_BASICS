@@ -9,6 +9,17 @@ export function Read() {
     const getData = async () => {
         const usersDataRef = await db.collection('UsersData')
         let usersData = await usersDataRef.where('uid', '==', currentUser.uid).limit(4).get()
+
+        try {
+            let paginatedResult = await usersDataRef.orderBy('nat').endBefore('FR').limit(4).get()
+
+            paginatedResult = paginatedResult.docs
+
+            paginatedResult = paginatedResult.map(datas => datas.data().nat)
+
+            console.log(paginatedResult)
+
+        } catch (err) { console.log(err) }
         if (usersData.empty) return console.log(`no document present in db. `)
 
         usersData = usersData.docs
