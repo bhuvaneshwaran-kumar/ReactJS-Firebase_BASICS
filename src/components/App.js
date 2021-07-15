@@ -11,6 +11,7 @@ import Signup from "./Signup"
 import { AuthProvider } from '../contexts/AuthContext'
 import { Create } from './Create.js'
 import ForgotPassword from './ForgotPassword';
+import { Read } from './Read.js';
 
 export const App = () => (
   <Container className="d-flex  align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
@@ -20,6 +21,7 @@ export const App = () => (
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />
             <PrivateRoute exact path="/create" component={Create} />
+            <PrivateRoute exact path="/read" component={Read} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/forgot-password" component={ForgotPassword} />
