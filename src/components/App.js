@@ -12,6 +12,8 @@ import { AuthProvider } from '../contexts/AuthContext'
 import { Create } from './Create.js'
 import ForgotPassword from './ForgotPassword';
 import { Read } from './Read.js';
+import { Update } from './Update.js';
+import { Delete } from './Delete.js';
 
 export const App = () => (
   <Container className="d-flex  align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
@@ -22,6 +24,8 @@ export const App = () => (
             <PrivateRoute exact path="/" component={Dashboard} />
             <PrivateRoute exact path="/create" component={Create} />
             <PrivateRoute exact path="/read" component={Read} />
+            <PrivateRoute exact path="/update" component={Update} />
+            <PrivateRoute exact path="/delete" component={Delete} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/forgot-password" component={ForgotPassword} />
