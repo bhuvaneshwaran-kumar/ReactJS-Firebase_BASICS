@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Alert, Card, Button } from 'react-bootstrap'
-import { db } from '../firebase.example'
-import { useAuth } from '../contexts/AuthContext'
+import { db } from '../../firebase.example'
+import { useAuth } from '../../contexts/AuthContext'
 import { useHistory } from 'react-router-dom'
 
 

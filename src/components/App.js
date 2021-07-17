@@ -5,15 +5,15 @@ import {
 } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import PrivateRoute from './PrivateRoute'
-import Dashboard from './Dashboard.js'
+import Dashboard from './CrudDashboard.js'
 import Login from './Login.js'
 import Signup from "./Signup"
 import { AuthProvider } from '../contexts/AuthContext'
-import { Create } from './Create.js'
+import { Create } from './CRUD/Create.js'
 import ForgotPassword from './ForgotPassword';
-import { Read } from './Read.js';
-import { Update } from './Update.js';
-import { Delete } from './Delete.js';
+import { Read } from './CRUD/Read.js';
+import { Update } from './CRUD/Update.js';
+import { Delete } from './CRUD/Delete.js';
 
 export const App = () => (
   <Container className="d-flex  align-items-center justify-content-center" style={{ minHeight: '100vh' }}>

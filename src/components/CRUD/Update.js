@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { Card, Button, Container, Row, Col } from 'react-bootstrap'
-import { db } from '../firebase.example'
-import { useAuth } from '../contexts/AuthContext'
+import { db } from '../../firebase.example'
+import { useAuth } from '../../contexts/AuthContext'
 import { useHistory } from 'react-router-dom'
 import { useEffect } from 'react'
 
