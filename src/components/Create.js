@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import { Card, Button, Alert } from 'react-bootstrap'
-import { db } from '../firebase.example'
+import { db, serverTimestamp } from '../firebase.example'
 import { useAuth } from '../contexts/AuthContext'
 import { useHistory } from 'react-router-dom'
 
@@ -38,7 +38,8 @@ export function Create({ ...rest }) {
 
             randomUserData = {
                 name: `${randomUserData.name.title}.${randomUserData.name.first} ${randomUserData.name.last} `,
-                uid: currentUser.uid
+                uid: currentUser.uid,
+                createdAt: serverTimestamp()
             }
             await usersRef.add(randomUserData)
             setMessage(`${randomUserData.name} is successfully added in your fireStore database`)
