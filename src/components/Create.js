@@ -31,17 +31,17 @@ export function Create({ ...rest }) {
         setMessage('')
         setLoading(true)
         try {
-            const usersRef = await db.collection('UsersData')
+            const usersRef = await db.collection('users')
             let randomUserData = await fetchRandomUserData()
 
             if (!randomUserData) return
 
             randomUserData = {
-                ...randomUserData,
+                name: `${randomUserData.name.title}.${randomUserData.name.first} ${randomUserData.name.last} `,
                 uid: currentUser.uid
             }
             await usersRef.add(randomUserData)
-            setMessage(`${randomUserData.name.title}.${randomUserData.name.first} ${randomUserData.name.last} is successfully added in your fireStore database`)
+            setMessage(`${randomUserData.name} is successfully added in your fireStore database`)
         }
         catch (err) {
             console.log('error While Creating Data')
