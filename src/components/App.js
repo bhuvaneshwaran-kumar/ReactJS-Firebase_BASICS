@@ -15,7 +15,8 @@ import { Read } from './CRUD/Read.js';
 import { Update } from './CRUD/Update.js';
 import { Delete } from './CRUD/Delete.js';
 import { SearchInArray } from './compoundQueries/SearchInArray';
-
+import { Title } from './fireGram/Title'
+import { UploadForm } from './fireGram/UploadForm'
 export const App = () => (
   <Container className="d-flex  align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
     <div className="w-100" style={{ maxWidth: '400px' }}>
@@ -28,6 +29,10 @@ export const App = () => (
             <PrivateRoute exact path="/update" component={Update} />
             <PrivateRoute exact path="/delete" component={Delete} />
             <PrivateRoute exact path="/search-in-array" component={SearchInArray} />
+            <Route path="/fire-gram">
+              <Title />
+              <UploadForm />
+            </Route>
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/forgot-password" component={ForgotPassword} />
