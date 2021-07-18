@@ -27,11 +27,12 @@ function Dashboard({ name }) {
                         error && <Alert variant='danger'>{error}</Alert>
                     }
                     <strong>Email :</strong> {currentUser.email}
-                    <div className="d-flex justify-content-around mt-2">
+                    <div className="d-flex justify-content-around mt-2 flex-wrap">
                         <Link to="/create" className="btn btn-primary">Create</Link>
                         <Link to="/read" className="btn btn-secondary">Read</Link>
                         <Link to="/update" className="btn btn-info">Update</Link>
                         <Link to="/delete" className="btn btn-danger">Delete</Link>
+                        <Link to='/search-in-array' className="btn btn-secondary m-2">SearchInArray</Link>
                     </div>
                 </Card.Body>
             </Card>
