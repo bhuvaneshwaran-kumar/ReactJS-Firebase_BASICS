@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
+import { useFireStorage } from '../../hooks/useFireStorage'
+import { motion } from 'framer-motion'
 
 export function ProgressBar({ file, setFile }) {
 
-    let url = ''
+    let { url, progress } = useFireStorage(file)
 
     useEffect(() => {
         if (url) {
@@ -10,8 +12,11 @@ export function ProgressBar({ file, setFile }) {
         }
     }, [url, setFile])
     return (
-        <div className="progress-bar">
+        <motion.div className="progress-bar"
+            initial={{ width: 0 }}
+            animate={{ width: progress + '%' }}
+        >
 
-        </div>
+        </motion.div>
     )
 }

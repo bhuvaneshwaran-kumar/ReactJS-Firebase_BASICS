@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch, Route
@@ -17,28 +17,31 @@ import { Delete } from './CRUD/Delete.js';
 import { SearchInArray } from './compoundQueries/SearchInArray';
 import { Title } from './fireGram/Title'
 import { UploadForm } from './fireGram/UploadForm'
-export const App = () => (
-  <Container className="d-flex  align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
-    <div className="w-100" style={{ maxWidth: '400px' }}>
-      <Router>
-        <AuthProvider>
-          <Switch>
-            <PrivateRoute exact path="/" component={Dashboard} />
-            <PrivateRoute exact path="/create" component={Create} />
-            <PrivateRoute exact path="/read" component={Read} />
-            <PrivateRoute exact path="/update" component={Update} />
-            <PrivateRoute exact path="/delete" component={Delete} />
-            <PrivateRoute exact path="/search-in-array" component={SearchInArray} />
-            <Route path="/fire-gram">
-              <Title />
-              <UploadForm />
-            </Route>
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/forgot-password" component={ForgotPassword} />
-          </Switch>
-        </AuthProvider>
-      </Router>
-    </div>
-  </Container>
-);
+import { ImageGrid } from './fireGram/ImageGrid'
+import { Index } from './fireGram/Index'
+export const App = () => {
+
+  return (
+    <Container className="d-flex  align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
+      <div className="w-100" style={{ maxWidth: '400px' }}>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <PrivateRoute exact path="/" component={Dashboard} />
+              <PrivateRoute exact path="/create" component={Create} />
+              <PrivateRoute exact path="/read" component={Read} />
+              <PrivateRoute exact path="/update" component={Update} />
+              <PrivateRoute exact path="/delete" component={Delete} />
+              <PrivateRoute exact path="/search-in-array" component={SearchInArray} />
+              <PrivateRoute exact path="/fire-gram" component={Index} />
+
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+            </Switch>
+          </AuthProvider>
+        </Router>
+      </div>
+    </Container>
+  );
+}

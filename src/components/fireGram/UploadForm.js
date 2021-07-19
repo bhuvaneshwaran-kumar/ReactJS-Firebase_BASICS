@@ -10,13 +10,14 @@ export function UploadForm() {
     const handleChange = (e) => {
 
         let selected = e.target.files[0]
-
         if (selected && type.includes(selected.type)) {
             setError('')
             setFile(selected)
         } else {
             setError('Please Select Aan image file (PNG or JPG)')
         }
+
+
 
 
     }
