@@ -14,12 +14,13 @@ export const ImageGrid = ({ setSelectedImg }) => {
                     <motion.div className="img-wrap" key={doc.id}
                         layout
                         whileHover={{ opacity: 1 }} s
-                        onClick={() => setSelectedImg(doc.url)}
+
                     >
                         <motion.img src={doc.url} alt="uploaded Pic."
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: '300ms' }}  >
+                            transition={{ delay: '300ms' }}
+                            onClick={() => setSelectedImg(doc.url)} >
 
                         </motion.img>
                     </motion.div>
