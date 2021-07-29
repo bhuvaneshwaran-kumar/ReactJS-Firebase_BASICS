@@ -34,6 +34,7 @@ function Dashboard({ name }) {
                         <Link to="/delete" className="btn btn-danger">Delete</Link>
                         <Link to='/search-in-array' className="btn btn-secondary m-2">SearchInArray</Link>
                         <Link to='/fire-gram' className="btn btn-secondary m-2">Fire Gram🔥</Link>
+                        <Link to='/g-drive-practice' className="btn btn-success m-2">G-Drive practice🔥</Link>
                     </div>
                 </Card.Body>
             </Card>

@@ -1,7 +1,9 @@
 import firebase from 'firebase/app'
+// import admin from 'firebase-admin'
 import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
+// import 'firebase/'
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -21,4 +23,5 @@ export const auth = firebase.auth()
 export const db = firebase.firestore()
 export const serverTimestamp = firebase.firestore.FieldValue.serverTimestamp
 export const projectStorage = firebase.storage()
+// export const bucket = firebase.storage()
 // export default firebaseApp

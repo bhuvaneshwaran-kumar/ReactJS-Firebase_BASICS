@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import PrivateRoute from './PrivateRoute'
-import Dashboard from './CrudDashboard.js'
+import Dashboard from './Dashboard.js'
 import Login from './Login.js'
 import Signup from "./Signup"
 import { AuthProvider } from '../contexts/AuthContext'
@@ -19,6 +19,7 @@ import { Title } from './fireGram/Title'
 import { UploadForm } from './fireGram/UploadForm'
 import { ImageGrid } from './fireGram/ImageGrid'
 import { Index } from './fireGram/Index'
+import Gdrive from './g_drive_practice/Gdrive'
 export const App = () => {
 
   return (
@@ -34,6 +35,7 @@ export const App = () => {
               <PrivateRoute exact path="/delete" component={Delete} />
               <PrivateRoute exact path="/search-in-array" component={SearchInArray} />
               <PrivateRoute exact path="/fire-gram" component={Index} />
+              <PrivateRoute exact path="/g-drive-practice" component={Gdrive} />
 
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
